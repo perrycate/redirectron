@@ -1,0 +1,7 @@
+To Do list:
+
+1. Figure out how to insert html using javascript again.
+2. Test out info.url to get the current url.
+	a. does it work?
+	b. is it pass by reference or value 
+		- ie if I change info.url, will it put something new in the omnibox?
