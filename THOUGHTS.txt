@@ -1,0 +1,32 @@
+~~~Random Thoughts regarding design and implementation~~~
+
+**********************
++ sign indicates things to add in, or positive ideas
+- sign indicates things to remove or avoid, or other negative ideas
+~ sign indicates thought could be + or -, or neither
+
+**********************
+
+
+/~General~\
+
++ Make sure code is well documented and neat before open-sourcing, even if nobody ends up contributing.
+
+
+/~Implementation~\
+
+- redirected site should be (or appear to be) the same tab the user was in
+	+ avoids confusing user.
+
++ Ideally, find a chrome API thingy that allows for changing the current tab's url, then the app simply reloads the tab with the proxy site prepended.
+
+~ If above API method not availible, could open new tab with modified url, then close the previous tab. (figure out how)
+
+
+/~Things to decide about~\
+
+~ Should there be some sort of indicator for when the extension is redirecting?
+	+ On one hand, useful for debugging, good to know when extension is in use.
+	- On the other hand, screen surfers might be able to see that's it's an extensionallowing filter bypasses, and disable it.
+	~ Maybe have an option to have it on or off?
+		+ If so, you could have a way to disable the icon completely!
