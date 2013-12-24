@@ -4,7 +4,7 @@
 + sign indicates things to add in, or positive ideas
 - sign indicates things to remove or avoid, or other negative ideas
 ~ sign indicates thought could be + or -, or neither
-
+!!! before post means it's probably important.
 **********************
 
 
@@ -14,6 +14,15 @@
 
 
 /~Implementation~\
+
+~ How it determines if a site is blocked:
+	~For now, look through the page once loaded. If title = "blocked request" etc.
+	~ (cont.) then it redirects.
+
+	-Disadvantages:
+		- only useful for specific blocker programs, not all.
+		- Might be slower since 2 pages will have to load. (blocker, then proxy)
+		~ See "future features" for a possible fix.
 
 - redirected site should be (or appear to be) the same tab the user was in
 	+ avoids confusing user.
@@ -30,3 +39,17 @@
 	- On the other hand, screen surfers might be able to see that's it's an extensionallowing filter bypasses, and disable it.
 	~ Maybe have an option to have it on or off?
 		+ If so, you could have a way to disable the icon completely!
+
+
+/~Useful Stuff~\
+
++ Chrome APIs to possibly use (chrome.tabs. ...):
+	+ create
+	+ query
+!!!	+ update !!! Could this method allow for changing the url property???
+
+
+/~Future Features~\
+
++ Instead of scanning a loaded html page to see if site was blocked, (onResponseStarted or onCompleted),
+	it could check the HTTP headers before the page is rendered. (onHeadersRecieved I suppose?)
