@@ -8,7 +8,8 @@
 		"default_popup": "popup.html"
 	},
 	"permissions": [
-		"tabs"
+		"tabs",
+		"webNavigation"
 	],
 	"background": {
 		"scripts": ["background.js"]
