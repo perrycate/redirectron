@@ -10,7 +10,8 @@
 
 /~General~\
 
-+ Make sure code is well documented and neat before open-sourcing, even if nobody ends up contributing.
++ Make sure code is well documented and neat before open-sourcing, even if nobody 
+	(c) ends up contributing.
 
 
 /~Implementation~\
@@ -27,16 +28,23 @@
 - redirected site should be (or appear to be) the same tab the user was in
 	+ avoids confusing user.
 
-+ Ideally, find a chrome API thingy that allows for changing the current tab's url, then the app simply reloads the tab with the proxy site prepended.
++ Ideally, find a chrome API thingy that allows for changing the current tab's url,
+	(c) then the app simply reloads the tab with the proxy site prepended.
 
-~ If above API method not availible, could open new tab with modified url, then close the previous tab. (figure out how)
+~ If above API method not availible, could open new tab with modified url, then close
+	(c) the previous tab. (figure out how)
 
+~ .appspot websites have limited bandwidth. If used by many people as proxies, it 
+	(c) could cause performance issues. What's another good proxy to default to?
+	
+	+ Perhaps Google Translate?
 
 /~Things to decide about~\
 
 ~ Should there be some sort of indicator for when the extension is redirecting?
 	+ On one hand, useful for debugging, good to know when extension is in use.
-	- On the other hand, screen surfers might be able to see that's it's an extensionallowing filter bypasses, and disable it.
+	- On the other hand, screen surfers might be able to see that's it's an extension
+		(c) allowing filter bypasses, and disable it.
 	~ Maybe have an option to have it on or off?
 		+ If so, you could have a way to disable the icon completely!
 
@@ -51,11 +59,14 @@
 
 /~Future Features~\
 
-+ Instead of scanning a loaded html page to see if site was blocked, (onResponseStarted or onCompleted),
-	it could check the HTTP headers before the page is rendered. (onHeadersRecieved I suppose?)
-	~ Is there an HTTP Error code in the header?
-	~ What about using traceroute?
++ Instead of scanning a loaded html page to see if site was blocked,
+	(c) (onResponseStarted or onCompleted),	it could check the HTTP headers before
+	(c) the page is rendered. (onHeadersRecieved I suppose?)
+		~ Is there an HTTP Error code in the header?
+		~ What about using traceroute?
 
-+ Make a manual redirect button. (If the blocker isn't detected, user can manually click the extension, and it'll redirect for them.)
++ Make a manual redirect button. (If the blocker isn't detected, user can manually
+	(c) click the extension, and it'll redirect for them.)
 
-+ Make a button to recognize a different blocker - when button clicked, saves title so extension knows what to redirect around.
++ Make a button to recognize a different blocker - when button clicked, saves title
+	(c) so extension knows what to redirect around.
