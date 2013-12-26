@@ -53,6 +53,8 @@
 
 + Instead of scanning a loaded html page to see if site was blocked, (onResponseStarted or onCompleted),
 	it could check the HTTP headers before the page is rendered. (onHeadersRecieved I suppose?)
+	~ Is there an HTTP Error code in the header?
+	~ What about using traceroute?
 
 + Make a manual redirect button. (If the blocker isn't detected, user can manually click the extension, and it'll redirect for them.)
 
