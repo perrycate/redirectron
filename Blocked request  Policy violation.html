@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+/* ================== NOTIFICATION PAGE TEMPLATE: BLOCK PAGE ================== */
+/*  Edit and upload this template to customize your organization's block page.  */
+/*           Copyright © 2000-2010 Sophos Limited. All rights reserved.           */
+/* ============================================================================ */
+-->
+<!-- Sophos Web Appliance Block Page -->
+<title>Blocked request: Policy violation</title>
+
+<style>
+    body, ul, li {
+        color:#737373;
+        font-family:Arial,Helvetica,sans-serif;
+        font-size:12px;
+        margin:0pt;
+        padding:0pt;
+    }
+    a:link, a:visited, a:active {
+        color:#015589;
+        text-decoration:underline;
+    }
+    a:hover {
+        color:#51A8DE;
+        text-decoration:none;
+    }
+    .content {
+        border:1px solid #EBEBEB;
+        margin:0px auto 6px;
+        padding:20px 15px 15px 70px;
+        width:500px;
+    }
+    .blocking { 
+        border-top: #D52B1E solid 2px;
+        border-bottom: #D52B1E solid 2px;
+        background-image:url(https://SophosWA.richlandone.org/2222251/resources/images/ico_status_error.png);
+        background-repeat:no-repeat;
+        background-position: 9px 9px;
+    }
+    .warning { 
+        border-top: #F0AB00 solid 2px;
+        border-bottom: #F0AB00 solid 2px;
+        background-image:url(https://SophosWA.richlandone.org/2222251/resources/images/ico_status_warning.png);
+        background-repeat:no-repeat;
+        background-position: 9px 9px;
+    }
+    .message { border-top: #0076C0 solid 2px;
+        border-bottom: #0076C0 solid 2px;
+        background-image:url(https://SophosWA.richlandone.org/2222251/resources/images/ico_info.png);
+        background-repeat:no-repeat;
+        background-position: 9px 9px;
+    }
+
+    #msg_title {
+        border-bottom:1px solid #CCCCCC;
+        font-size:24px;
+        margin-bottom:15px;
+        padding-bottom:15px;
+    }
+
+    .title { font-weight: 700; }
+
+    .details li {
+        list-style-image:none;
+        list-style-position:outside;
+        list-style-type:none;
+        padding:6px 0pt;
+    }
+    .url {
+        display:block;
+        font-style:italic;
+        font-weight:700;
+        height:18px;
+        overflow:hidden;
+        width:490px;
+    }
+    .ellipsis {
+        overflow:hidden;
+        white-space:nowrap;
+    }
+    .combobox {
+        color:#737373;
+        font-size:11px;
+    }
+    #textfield {
+        width:460px;
+    }
+    .buttonHolder {
+        padding:6px 0pt;
+        display: block;
+    }
+    .buttonHolder input {
+        font-size:11px;
+    }
+    .footer {
+        color:#CCCCCC;
+        font-size:14px;
+        margin:0pt auto;
+        text-align:center;
+        width:565px;
+    }
+    .bold {
+        font-weight:700;
+    }
+    .italic {
+        font-style:italic;
+    }
+    .info_line {
+        margin-bottom:6px;
+    }
+    .url {
+        font-style:italic;
+        font-weight:700;
+        height:18px;
+    }
+    .nologo img, #footer.nologo {
+        display: none;
+    }
+</style>
+
+
+
+</head>
+<body onload="init()">
+<div id="main" align="center">
+    <img src='http://sophoswa11.richlandone.local/2342234/resources/dynamic/logo.jpg' />
+</div>
+<div id="alertContent" class="content blocking">
+    <div class="outer_border" style="margin-top: 5px">
+    <div class="inner_border">
+	<div class="alertIcon policy" id="alert_icon">
+	</div>
+	<div align="left" class="alertTitle" id="msg_title">
+	  Blocked request: Policy violation
+	</div>
+	<div class="info_line" id="msg_reason">
+	<span class="title">ICAN Website:</span> Use the <a href="http://s3.parature.com/ics/support/default.asp?deptID=5505">ICAN website</a> to open a ticket to have the site reviewed for opening.<br> </div>
+	
+		 <script>
+
+    var isPreview = false;
+    var isWarn = false;
+
+    var isComplete = false;
+
+/* <![CDATA[ */
+
+var Browser = {
+    IE:     !!(window.attachEvent && !window.opera),
+    Opera:  !!window.opera,
+    WebKit: navigator.userAgent.indexOf('AppleWebKit/') > -1,
+    Gecko:  navigator.userAgent.indexOf('Gecko') > -1 && navigator.userAgent.indexOf('KHTML') == -1,
+    MobileSafari: !!navigator.userAgent.match(/Apple.*Mobile.*Safari/)
+}
+
+    function base64_decode(input) {
+        var keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+        var output = '';
+        var chr1, chr2, chr3 = '';
+        var enc1, enc2, enc3, enc4 = '';
+        var i = 0;
+        if (input.length%4!=0){
+            return '';
+        }
+        var base64test = /[^A-Za-z0-9\+\/\=]/g;
+        if (base64test.exec(input)){
+            return '';
+        }
+        while (i < input.length) {
+            enc1 = keys.indexOf(input.charAt(i++));
+            enc2 = keys.indexOf(input.charAt(i++));
+            enc3 = keys.indexOf(input.charAt(i++));
+            enc4 = keys.indexOf(input.charAt(i++));
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+            output = output + String.fromCharCode(chr1);
+            if (enc3 != 64){
+                output+=String.fromCharCode(chr2);
+            }
+            if (enc4 != 64){
+                output+=String.fromCharCode(chr3);
+            }
+            chr1 = chr2 = chr3 = '';
+            enc1 = enc2 = enc3 = enc4 = '';
+        }
+
+        return utf8_decode(output);
+    }
+
+    function utf8_decode(utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+
+        while ( i < utftext.length ) {
+
+            c = utftext.charCodeAt(i);
+
+            if (c < 128) {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if((c > 191) && (c < 224)) {
+                c2 = utftext.charCodeAt(i+1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            }
+            else {
+                c2 = utftext.charCodeAt(i+1);
+                c3 = utftext.charCodeAt(i+2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+
+        }
+
+        return string;
+    }
+
+
+    function submitForm(aForm) {
+	if (isPreview)
+	    return false;
+	aForm.submit();
+    }
+
+    function goBackFromSubmit() {
+	if (isPreview)
+	    return false;
+        doGoBack(-2);
+    }
+    
+    function goBack() {
+	if (isPreview)
+	    return false;
+        doGoBack(-1);
+    }
+
+    function doGoBack(i) {
+	if (isPreview)
+	    return false;
+
+	history_length = history.length;
+	if (Browser.IE) {
+		history_length = history_length + 1;
+	}
+	if(history_length > i*(-1)) {
+	    history.go(i);
+	} else {
+            window.location = 'about:blank';
+	}
+
+	return false;
+    }
+
+    function init() {
+	if (self != top) {
+	    document.getElementById('main').className="nologo";
+	    document.getElementById('footer').className="nologo";
+        }
+    }
+
+    function showFeedback() {
+	if (isPreview)
+	    return false;
+	document.getElementById('main_block').style.display="none";
+        var msgTitle = document.getElementById('msg_title');
+        if(msgTitle)
+            msgTitle.innerHTML = "Submit request";
+        var alertContent = document.getElementById('alertContent');
+        if(alertContent)
+            alertContent.className = "content message";
+    }
+
+    function submitFeedback() {
+	submitForm(document.getElementById('form_report'));
+    }
+
+    function feedbackChanged() {
+        var sb_cat = document.getElementById('sb_category');
+        document.getElementById('lnk_submit_feedback').disabled = 
+            document.getElementById('txt_comment').value.replace(/^\s+/, '').replace(/\s+$/, '').length == 0 &&
+            (sb_cat == null || sb_cat.value == "nochange");
+    }
+
+/* ]]> */
+</script>		
+
+<div style="display: none" id="selectedMenuItem">UsrViewBlocked_policy</div>
+<div class="border01">
+<div class="border02 body">
+    <div id="main_block">
+                <div class="info_line" id="msg_reason">
+            <span class="title">Reason:</span>
+                            Blogs & Forums                        sites are blocked        </div>
+                        <div class="info_line" id="msg_threat_source">
+            <span class="title">Site:</span> http://ubuntuforums.org/        </div>
+                            <div class="info_line" id="msg_long_reason">
+                Access to this website is restricted by your organization's internet access policy.<br/><br/>**Please do not request Youtube be unblocked. RCSD1 will not unblock Youtube due to bandwidth.**            </div>
+                        <div class="buttonOptionsHolder optional">
+            <input type="button" onClick="goBack();" id="lnk_return" value="Return to previous page" />
+        </div>
+            </div>
+
+    
+    
+</div>
+</div>
+
+         
+         
+	<div id="footer" class="alertFooter">
+	
+	</div>
+    </div>
+	</div>
+	</div>
+	<div id="footer" class="footer">
+	<strong>1616 Richland Street  |  RCSD1 IT Department  | Phone: (803)231-7436 </strong>
+	</div>
+</body></html>
