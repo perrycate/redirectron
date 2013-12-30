@@ -4,8 +4,7 @@
 	"version": "0.1",
 	"description": "Redirects to websites through a proxy server",
 	"browser_action": {
-		"default_icon": "icon.png",
-		"default_popup": "popup.html"
+		"default_icon": "icon.png"
 	},
 	"permissions": [
 		"tabs",
