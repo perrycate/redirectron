@@ -1,9 +1,18 @@
 To Do list:
 
+0. ** Figure out how to debug extension. (error messages, console output, etc.) **
+
 1. Figure out how to insert and read html using javascript again.
-2. Test out info.url to get the current url.
-	a. does it work?
-	b. is it pass by reference or value 
+
+/*
+[DONE]  2. Test out info.url to get the current url.
+	a. does it work? *YES (but it doesn't have to be "info", just whatever (??) was
+		(c) passed to the function in the first place.
+	b. is it pass by reference or value *NO (as far as I can tell)
 		- ie if I change info.url, will it put something new in the omnibox?
+*/
+
 3. How to redirect?
-	~ JBAR plugin appears to return something called redirectURL. Investigate.
+	~ a JBAR plugin function appears to return something called redirectURL. Investigate.
+
+4. Switch background.js into an event page.
