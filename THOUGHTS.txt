@@ -68,20 +68,18 @@
 		~ Is there an HTTP Error code in the header?
 		~ What about using traceroute?
 
++ After the redirected page has been loaded, return the URL to normal without
+	(c) refreshing, to hide evidence of a proxy server.
 
 /~To Do list:~\
-
--1. Test the darned thing now that it *might* actually do something.
 
 0. ** Figure out how to debug extensions. (error messages, console output, etc.) **
 
 1. Figure out how to insert and read html using javascript again.
 
-4. Switch background.js into an event page.
-
 4.5 Find way to prevent button from being clicked multiple times per page. It doesn't
 	(c) help anything, and will just slow things down. [or will it?]
-	+ Better yet, clicking a second time could stop the redirecting.
+	+ Better yet, clicking a second time could stop the redirecting (ie remove proxy)
 
 4.75 incorporate proper icons.
 
