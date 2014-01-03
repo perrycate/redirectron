@@ -15,19 +15,30 @@ function sayHello()
 
 
 // url of the proxy to use. How to incorporate an option for user to change this?
-var proxyUrl = "http://tommy-b.appspot.com/"
+var proxyUrl = "http://tommy-b.appspot.com/"; // maybe use google translate instead?
 
-
-chrome.browserAction.onClicked.addListener(function(tab) {
-	
+function redirect(tab)
+{
 	// gets the current url, and appends the proxy server to use.
-	var url = tab.url
+	var url = tab.url;
+	url = url.slice((url.indexOf("://") + 3));
+
 	var redirectUrl = proxyUrl + url
 
 	// changes the current url to use the selected proxy server.
 	chrome.tabs.update(tab.id, {url: redirectUrl});
 
-	// Confirm that this code block ran succesfully, since I can't find where error
-	// messages are outputted.
-	alert("code succesfully run.");
-});
+	// ? is there a way to change the url back to normal without reloading after the
+	// page is loaded, to hide evidence of a proxy?
+
+	// What follows is just experimentation
+	/* Why doesn't this work?
+	var a = document.title;
+	alert("The title is: " + a);
+	*/
+}
+
+chrome.browserAction.onClicked.addListener(redirect);
+// ? note to self: why does the redirect function work without being passed anything?
+// more research on passing functions required.
+

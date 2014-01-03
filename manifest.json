@@ -1,15 +1,16 @@
 {
 	"manifest_version": 2,
 	"name": "Redirectron",
-	"version": "0.1",
+	"version": "1.0",
 	"description": "Redirects to websites through a proxy server",
 	"browser_action": {
 		"default_icon": "icon.png"
 	},
 	"permissions": [
-		"tabs"
-	],
+	], // I would have thought that since it uses tabs.update I would need the "tabs"
+		// (c) permission, but evidently not. Works for me!
 	"background": {
 		"scripts": ["background.js"]
-	}
+	},
+	"options_page": "options.html"
 }

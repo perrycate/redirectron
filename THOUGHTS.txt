@@ -19,11 +19,14 @@
 ~ How it determines if a site is blocked:
 	~For now, look through the page once loaded. If title = "blocked request" etc.
 	~ (cont.) then it redirects.
+	
+	+ When icon clicked to manually redirect around, if auto redirection enabled,
+		(c) could automatically set that page (title I suppose for now) as the one
+		(c) to redirect around if detected. A unobtrusive notification, ie:
+		(c) "Setting this page as the default blocker to avoid..." would be nice.
 
 	-Disadvantages:
-		- only useful for specific blocker programs, not all.
 		- Might be slower since 2 pages will have to load. (blocker, then proxy)
-		~ See "future features" for a possible fix.
 
 - redirected site should be (or appear to be) the same tab the user was in
 	+ avoids confusing user.
@@ -54,7 +57,7 @@
 + Chrome APIs to possibly use (chrome.tabs. ...):
 	+ create
 	+ query
-!!!	+ update !!! Could this method allow for changing the url property???
+!!!	+ update !!! Could this method allow for changing the url property??? [yes]
 
 
 /~Future Features~\
@@ -65,8 +68,24 @@
 		~ Is there an HTTP Error code in the header?
 		~ What about using traceroute?
 
-+ Make a manual redirect button. (If the blocker isn't detected, user can manually
-	(c) click the extension, and it'll redirect for them.)
 
-+ Make a button to recognize a different blocker - when button clicked, saves title
-	(c) so extension knows what to redirect around.
+/~To Do list:~\
+
+-1. Test the darned thing now that it *might* actually do something.
+
+0. ** Figure out how to debug extensions. (error messages, console output, etc.) **
+
+1. Figure out how to insert and read html using javascript again.
+
+4. Switch background.js into an event page.
+
+4.5 Find way to prevent button from being clicked multiple times per page. It doesn't
+	(c) help anything, and will just slow things down. [or will it?]
+	+ Better yet, clicking a second time could stop the redirecting.
+
+4.75 incorporate proper icons.
+
+5. Clean up code, make sure it matches proper extension conventions and whatnot 
+	(c) before uploading to github.
+
+6. Add an about page?
