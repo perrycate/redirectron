@@ -10,7 +10,7 @@
 	], // I would have thought that since it uses tabs.update I would need the "tabs"
 		// (c) permission, but evidently not. Works for me!
 	"background": {
-		"scripts": ["mainEvent.js"],
+		"scripts": ["experiment.js"],
 		"persistent": false
 	},
 	"options_page": "options.html"
