@@ -4,7 +4,7 @@
 	"version": "1.0",
 	"description": "Redirects to websites through a proxy server",
 	"browser_action": {
-		"default_icon": "icon.png"
+		"default_icon": "icon38.png"
 	},
 	"permissions": [
 	], // I would have thought that since it uses tabs.update I would need the "tabs"
@@ -12,6 +12,9 @@
 	"background": {
 		"scripts": ["mainEvent.js"],
 		"persistent": false
+	},
+	"icons": {
+		"128": "icon128.png"
 	},
 	"options_page": "options.html"
 }

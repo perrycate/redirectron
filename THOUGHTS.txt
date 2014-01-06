@@ -76,6 +76,7 @@
 0. ** Figure out how to debug extensions. (error messages, console output, etc.) **
 
 1. Figure out how to insert and read html using javascript again.
+	+ actually, to get the title just use tab.title.
 
 4.75 incorporate proper icons.
 

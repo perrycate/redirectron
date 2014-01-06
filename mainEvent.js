@@ -5,6 +5,8 @@ function redirect(tab)
 	var url = tab.url;
 	var redirectUrl = ""; 
 
+	console.log("debugging?");
+	
 	if(url.indexOf(proxyUrl) == -1) // if the proxy filter is not already in the url
 	{
 		// Prepends the proxy to the url, removing unecessary part of url. (protocol)
