@@ -1,4 +1,5 @@
 var proxyUrl = "http://tommy-b.appspot.com/"; // maybe use a different proxy?
+var title;
 
 function redirect(tab)
 {
@@ -27,4 +28,12 @@ function redirect(tab)
 	chrome.tabs.update(tab.id, {url: redirectUrl});
 }
 
+function isBlocked(tab) // to run redirect function when key pressed
+{
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		redirect(tabs[0]);
+	});
+}
+
 chrome.browserAction.onClicked.addListener(redirect);
+chrome.commands.onCommand.addListener(isBlocked);

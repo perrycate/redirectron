@@ -71,6 +71,8 @@
 + After the redirected page has been loaded, return the URL to normal without
 	(c) refreshing, to hide evidence of a proxy server.
 
++ Keyboard shortcut to activate
+
 /~To Do list:~\
 
 0. ** Figure out how to debug extensions. (error messages, console output, etc.) **

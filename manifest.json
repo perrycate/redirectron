@@ -7,14 +7,23 @@
 		"default_icon": "icon38.png"
 	},
 	"permissions": [
+		"webRequest",
+		"tabs"
 	], // I would have thought that since it uses tabs.update I would need the "tabs"
 		// (c) permission, but evidently not. Works for me!
 	"background": {
-		"scripts": ["mainEvent.js"],
-		"persistent": false
+		"scripts": ["mainEvent.js"] // cannot be event page because webRequest
 	},
 	"icons": {
 		"128": "icon128.png"
 	},
-	"options_page": "options.html"
+	"options_page": "options.html",
+	"commands": {
+		"redirect-on-key": {
+			"suggested_key": {
+				"default": "Alt+Shift+F"
+			},
+			"description": "Redirect triggered by key press instead of click"
+		}
+	}
 }
