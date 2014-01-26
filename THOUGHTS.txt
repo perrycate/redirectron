@@ -34,11 +34,13 @@
 + Ideally, find a chrome API thingy that allows for changing the current tab's url,
 	(c) then the app simply reloads the tab with the proxy site prepended.
 
-~ If above API method not availible, could open new tab with modified url, then close
+~ If above API method not available, could open new tab with modified url, then close
 	(c) the previous tab. (figure out how)
 
 ~ .appspot websites have limited bandwidth. If used by many people as proxies, it 
 	(c) could cause performance issues. What's another good proxy to default to?
+
+	+ Could use digitalOcean to make a proxy setup?
 	
 	+ Perhaps Google Translate?
 
@@ -54,13 +56,12 @@
 
 /~Useful Stuff~\
 
-+ Chrome APIs to possibly use (chrome.tabs. ...):
-	+ create
-	+ query
-!!!	+ update !!! Could this method allow for changing the url property??? [yes]
+chrome API Docs = good!
 
 
 /~Future Features~\
+
++ Options page to switch proxyUrl
 
 + Instead of scanning a loaded html page to see if site was blocked,
 	(c) (onResponseStarted or onCompleted),	it could check the HTTP headers before
@@ -71,16 +72,18 @@
 + After the redirected page has been loaded, return the URL to normal without
 	(c) refreshing, to hide evidence of a proxy server.
 
-+ Keyboard shortcut to activate
++ Use an https connection to server
 
 /~To Do list:~\
 
 0. ** Figure out how to debug extensions. (error messages, console output, etc.) **
+	+ [@self] look up javascript linting
 
-1. Figure out how to insert and read html using javascript again.
-	+ actually, to get the title just use tab.title.
+1. Add that options page.
 
-4.75 incorporate proper icons.
+1.5 Add in checks to make sure an inputted proxy won't cause an
+	(c) error when used.
+2. Perhaps there's a way to consolidate isBlocked and redirect?
 
 5. Clean up code, make sure it matches proper extension conventions and whatnot 
 	(c) before uploading to github.
