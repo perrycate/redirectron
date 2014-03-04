@@ -2,11 +2,23 @@ function redirect(tab)
 {
 	var url = tab.url;
 	var redirectUrl = ""; 
-	var proxyUrl = localStorage["proxy_server"]; 
+	var proxyUrl;
 
-	if(url.indexOf(proxyUrl) == -1) // if the proxy filter is not already in the url
+	// check if a custom server has been set
+	if(localStorage["proxy_server"] != null)
 	{
-		// Prepends the proxy to the url, removing unecessary part of url. (protocol)
+		proxyUrl = localStorage["proxy_server"]; 
+	}
+	else
+	{
+		// if not, uses a default server
+		proxyUrl = "http://tommy-b.appspot.com/";
+	}
+	
+	// if the proxy filter is not already in the url
+	if(url.indexOf(proxyUrl) == -1) 
+	{
+		// Prepends the proxy to the url, removing unecessary part of url.
 		redirectUrl = url.replace(/.*:\/\//, proxyUrl);
 	}
 	else
@@ -14,11 +26,12 @@ function redirect(tab)
 		// removes the proxy from the url
 		redirectUrl = url.replace(proxyUrl, "http://");
 		/*
-		   Note: adding the "http://" back is necessary to make the url readable by
-		 the browser. It was taken out in the first place to make the url readable 
-		 to the proxy server. 
+		   Note: adding the "http://" back is necessary to make the url 
+		   readable by the browser. It was taken out in the first place to
+		   make the url readable to the proxy server. 
 		 */
 	}
+	
 
 	// redirects to the modified url
 	chrome.tabs.update(tab.id, {url: redirectUrl});

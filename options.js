@@ -20,6 +20,9 @@ function restore_options() {
 	var server = document.getElementById("server");
 
 	if (!proxy) { // if no selected proxy, use a default.
+		// there should be a way to automatically link this as a default
+		// value, shouldn't there? as it is, the default is also hard coded
+		// into mainEvent.js
 		server.value = "http://tommy-b.appspot.com/";
 	}
 	else
