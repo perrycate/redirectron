@@ -4,13 +4,14 @@
 	"version": "1.0",
 	"description": "Redirects to websites through a proxy server",
 	"browser_action": {
-		"default_icon": "icon38.png"
+		"default_icon": "icon48.png"
 	},
 	"permissions": [
 		"tabs" // required for redirecting by key press
 	], 
 	"background": {
-		"scripts": ["mainEvent.js"] // [@self] remember to convert to event page.
+		"scripts": ["mainEvent.js"],
+		"persistent": false
 	},
 	"icons": {
 		"128": "icon128.png"

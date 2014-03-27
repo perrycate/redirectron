@@ -11,8 +11,9 @@ function redirect(tab)
 	}
 	else
 	{
-		// if not, uses a default server
-		proxyUrl = "http://tommy-b.appspot.com/";
+		// if not, set the default server to use
+		proxyUrl = "http://educationmode.appspot.com/";
+		localStorage["proxy_server"] = proxyUrl
 	}
 	
 	// if the proxy filter is not already in the url
@@ -39,6 +40,7 @@ function redirect(tab)
 
 function isBlocked(tab) // to run redirect function when key pressed
 {
+	// calls redirect function on the active tab
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 		redirect(tabs[0]);
 	});

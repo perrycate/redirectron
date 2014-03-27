@@ -4,14 +4,24 @@
 function save_options() {
 	var server = document.getElementById("server");
 	var proxy = server.value;
+	var statusMessage = "Options Saved";
+
+	// check if proxy is a valid url.
+	if(proxy.indexOf("http://") == -1 && proxy.indexOf("https://") == -1) {
+		statusMessage = "Warning: Incorrectly formatted url. Attempting " +
+		"to fix, but checking the url you just entered is a good idea.";
+		server.value = "https://" + server.value;
+		proxy = server.value;
+	}
+
 	localStorage["proxy_server"] = proxy;
 
 	// Update status to let user know options were saved.
 	var status = document.getElementById("status");
-	status.innerHTML = "Options Saved.";
+	status.innerHTML = statusMessage;
 	setTimeout(function() {
 		status.innerHTML = "";
-	}, 750);
+	}, 3000);
 }
 
 // Restores select box state to saved value from localStorage.
@@ -23,7 +33,7 @@ function restore_options() {
 		// there should be a way to automatically link this as a default
 		// value, shouldn't there? as it is, the default is also hard coded
 		// into mainEvent.js
-		server.value = "http://tommy-b.appspot.com/";
+		server.value = "http://educationmode.appspot.com/";
 	}
 	else
 	{

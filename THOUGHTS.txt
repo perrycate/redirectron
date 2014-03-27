@@ -61,8 +61,6 @@ chrome API Docs = good!
 
 /~Future Features~\
 
-+ Options page to switch proxyUrl
-
 + Instead of scanning a loaded html page to see if site was blocked,
 	(c) (onResponseStarted or onCompleted),	it could check the HTTP headers before
 	(c) the page is rendered. (onHeadersRecieved I suppose?)
@@ -79,10 +77,11 @@ chrome API Docs = good!
 0. ** Figure out how to debug extensions. (error messages, console output, etc.) **
 	+ [@self] look up javascript linting
 
-1. Add that options page.
-
 1.5 Add in checks to make sure an inputted proxy won't cause an
 	(c) error when used.
+1.55 Fixed missing https or http, but not a missing .com, .org, .guru, etc.
+How might we fix that..?
+
 2. Perhaps there's a way to consolidate isBlocked and redirect?
 
 5. Clean up code, make sure it matches proper extension conventions and whatnot 
