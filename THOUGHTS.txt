@@ -1,4 +1,4 @@
-~~~Random Thoughts regarding design and implementation~~~
+# ~~~Random Thoughts regarding design and implementation~~~
 
 **********************
 + sign indicates things to add in, or positive ideas

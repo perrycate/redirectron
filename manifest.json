@@ -7,7 +7,7 @@
 		"default_icon": "icon48.png"
 	},
 	"permissions": [
-		"tabs" // required for redirecting by key press
+		"tabs"
 	], 
 	"background": {
 		"scripts": ["mainEvent.js"],
