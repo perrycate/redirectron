@@ -33,7 +33,7 @@ function restore_options() {
 		// there should be a way to automatically link this as a default
 		// value, shouldn't there? as it is, the default is also hard coded
 		// into mainEvent.js
-		server.value = "http://educationmode.appspot.com/";
+		server.value = "https://educationmode.appspot.com/";
 	}
 	else
 	{

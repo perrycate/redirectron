@@ -12,7 +12,7 @@ function redirect(tab)
 	else
 	{
 		// if not, set the default server to use
-		proxyUrl = "http://educationmode.appspot.com/";
+		proxyUrl = "https://educationmode.appspot.com/";
 		localStorage["proxy_server"] = proxyUrl
 	}
 	
