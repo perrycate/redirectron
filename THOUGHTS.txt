@@ -74,8 +74,9 @@ chrome API Docs = good!
 
 /~To Do list:~\
 
-0. ** Figure out how to debug extensions. (error messages, console output, etc.) **
-	+ [@self] look up javascript linting
+0. Make a better readme
+
+1. Fix Thoughts.txt ugly (c)s to indicate wraparound. It shouldn't look this ugly...
 
 1.5 Add in checks to make sure an inputted proxy won't cause an
 	(c) error when used.
@@ -83,8 +84,5 @@ chrome API Docs = good!
 How might we fix that..?
 
 2. Perhaps there's a way to consolidate isBlocked and redirect?
-
-5. Clean up code, make sure it matches proper extension conventions and whatnot 
-	(c) before uploading to github.
 
 6. Add an about page?
