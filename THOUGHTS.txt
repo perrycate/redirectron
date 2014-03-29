@@ -5,13 +5,15 @@
 - sign indicates things to remove or avoid, or other negative ideas
 ~ sign indicates thought could be + or -, or neither
 !!! before post means it's probably important.
+(c) means it's just a wraparound so I don't go over 80 chars per line,
+	(c) though that looks ugly, so I'll change it soon.
 **********************
 
 
 /~General~\
 
-+ Make sure code is well documented and neat before open-sourcing, even if nobody 
-	(c) ends up contributing.
++ Next idea I will have it try to automatically detect if a site has been blocked,
+	(c) so it can automatically redirect.
 
 
 /~Implementation~\
