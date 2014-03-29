@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Redirectron",
 	"version": "1.0",
-	"description": "Get around web blockers with a single click!",
+	"description": "Get around web blockers instantly!",
 	"browser_action": {
 		"default_icon": "icon48.png"
 	},
