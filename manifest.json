@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Redirectron",
 	"version": "1.0",
-	"description": "Redirects to websites through a proxy server",
+	"description": "Get around web blockers with a single click!",
 	"browser_action": {
 		"default_icon": "icon48.png"
 	},
