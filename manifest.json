@@ -20,7 +20,7 @@
 	"commands": {
 		"redirect-on-key": {
 			"suggested_key": {
-				"default": "Alt+Shift+F"
+				"default": "Alt+Shift+R"
 			},
 			"description": "Redirect triggered by key press instead of click"
 		}
