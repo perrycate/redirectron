@@ -76,8 +76,6 @@ chrome API Docs = good!
 
 /~To Do list:~\
 
--1. Add GPL License
-
 0. Make a better readme
 
 1. Fix Thoughts.txt ugly (c)s to indicate wraparound. It shouldn't look this ugly...

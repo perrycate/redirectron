@@ -48,3 +48,9 @@ function isBlocked(tab) // to run redirect function when key pressed
 
 chrome.browserAction.onClicked.addListener(redirect);
 chrome.commands.onCommand.addListener(isBlocked);
+// just testing here.
+/*
+chrome.webRequest.onResponseStarted.addListener(function(object details) {
+	alert(details.statusCode);
+});
+*/
