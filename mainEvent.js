@@ -29,7 +29,7 @@ function redirect(tab)
 		/*
 		   Note: adding the "http://" back is necessary to make the url 
 		   readable by the browser. It was taken out in the first place to
-		   make the url readable to the proxy server. 
+		   make the url readable to the proxy server.
 		 */
 	}
 	
@@ -38,7 +38,7 @@ function redirect(tab)
 	chrome.tabs.update(tab.id, {url: redirectUrl});
 }
 
-function isBlocked(tab) // to run redirect function when key pressed
+function keyPressed(tab) // to run redirect function when key pressed
 {
 	// calls redirect function on the active tab
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -47,10 +47,10 @@ function isBlocked(tab) // to run redirect function when key pressed
 }
 
 chrome.browserAction.onClicked.addListener(redirect);
-chrome.commands.onCommand.addListener(isBlocked);
-// just testing here.
+chrome.commands.onCommand.addListener(keyPressed);
 /*
+// just testing here. broken for some reason, not sure why yet...
 chrome.webRequest.onResponseStarted.addListener(function(object details) {
-	alert(details.statusCode);
+	alert("status code: ");
 });
 */
