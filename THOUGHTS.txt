@@ -5,53 +5,41 @@
 - sign indicates things to remove or avoid, or other negative ideas
 ~ sign indicates thought could be + or -, or neither
 !!! before post means it's probably important.
-(c) means it's just a wraparound so I don't go over 80 chars per line,
-	(c) though that looks ugly, so I'll change it soon.
+a tabbed indentation means it's just a wraparound so I don't go over 80 chars per line,
 **********************
 
 
 /~General~\
 
 + Next idea I will have it try to automatically detect if a site has been blocked,
-	(c) so it can automatically redirect.
+	so it can automatically redirect.
 
 
 /~Implementation~\
 
 ~ How it determines if a site is blocked:
 	~For now, look through the page once loaded. If title = "blocked request" etc.
-	~ (cont.) then it redirects.
+	then it redirects.
 	
 	+ When icon clicked to manually redirect around, if auto redirection enabled,
-		(c) could automatically set that page (title I suppose for now) as the one
-		(c) to redirect around if detected. A unobtrusive notification, ie:
-		(c) "Setting this page as the default blocker to avoid..." would be nice.
+		could automatically set that page (title I suppose for now) as the one
+		to redirect around if detected. A unobtrusive notification, ie:
+		"Setting this page as the default blocker to avoid..." would be nice.
 
 	-Disadvantages:
 		- Might be slower since 2 pages will have to load. (blocker, then proxy)
+		+ ... but still far more convenient than waiting for user input.
 
-- redirected site should be (or appear to be) the same tab the user was in
-	+ avoids confusing user.
++ In the future, looking at the http headers before the page is completely 
+	loaded would be much faster.
 
-+ Ideally, find a chrome API thingy that allows for changing the current tab's url,
-	(c) then the app simply reloads the tab with the proxy site prepended.
-
-~ If above API method not available, could open new tab with modified url, then close
-	(c) the previous tab. (figure out how)
-
-~ .appspot websites have limited bandwidth. If used by many people as proxies, it 
-	(c) could cause performance issues. What's another good proxy to default to?
-
-	+ Could use digitalOcean to make a proxy setup?
-	
-	+ Perhaps Google Translate?
 
 /~Things to decide about~\
 
 ~ Should there be some sort of indicator for when the extension is redirecting?
 	+ On one hand, useful for debugging, good to know when extension is in use.
 	- On the other hand, screen surfers might be able to see that's it's an extension
-		(c) allowing filter bypasses, and disable it.
+		allowing filter bypasses, and disable it.
 	~ Maybe have an option to have it on or off?
 		+ If so, you could have a way to disable the icon completely!
 
@@ -64,13 +52,13 @@ chrome API Docs = good!
 /~Future Features~\
 
 + Instead of scanning a loaded html page to see if site was blocked,
-	(c) (onResponseStarted or onCompleted),	it could check the HTTP headers before
-	(c) the page is rendered. (onHeadersRecieved I suppose?)
+	(onResponseStarted or onCompleted),	it could check the HTTP headers before
+	the page is rendered. (onHeadersRecieved I suppose?)
 		~ Is there an HTTP Error code in the header?
 		~ What about using traceroute?
 
 + After the redirected page has been loaded, return the URL to normal without
-	(c) refreshing, to hide evidence of a proxy server.
+	refreshing, to hide evidence of a proxy server.
 
 + Use an https connection to server
 
@@ -78,13 +66,9 @@ chrome API Docs = good!
 
 0. Make a better readme
 
-1. Fix Thoughts.txt ugly (c)s to indicate wraparound. It shouldn't look this ugly...
-
 1.5 Add in checks to make sure an inputted proxy won't cause an
-	(c) error when used.
+	error when used.
 1.55 Fixed missing https or http, but not a missing .com, .org, .guru, etc.
 How might we fix that..?
 
-2. Perhaps there's a way to consolidate isBlocked and redirect?
-
-6. Add an about page?
+?6. Add an about page?
