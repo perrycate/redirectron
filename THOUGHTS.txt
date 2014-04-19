@@ -68,6 +68,14 @@ chrome API Docs = good!
 
 ?. Make a better readme
 
+-1. add in workaround for bug in checkIfBlocked
+
+0. Factor out all the chrome.tabs.query statements into a function to just
+return the selected tab.
+
+0.5 Figure out once and for all whether to have brackets
+	in the same line
+
 1. Make a graphical way for user to set proxy to avoid, other than relying on 
 	keyboard shortcuts. (See note above)
 

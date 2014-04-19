@@ -7,11 +7,12 @@
 		"default_icon": "icon48.png"
 	},
 	"permissions": [
-		"tabs"
+		"tabs",
+		"webRequest", 
+		"*://*/*"
 	], 
 	"background": {
-		"scripts": ["mainEvent.js"],
-		"persistent": false
+		"scripts": ["background.js"]
 	},
 	"icons": {
 		"128": "icon128.png"
@@ -23,6 +24,12 @@
 				"default": "Alt+Shift+R"
 			},
 			"description": "Redirect triggered by key press instead of click"
+		},
+		"identify-blocker": {
+			"suggested_key": {
+				"default": "Alt+Shift+S"
+			},
+			"description": "Identify the blocker to enable auto redirection"
 		}
 	}
 }
