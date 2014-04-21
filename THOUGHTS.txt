@@ -72,6 +72,8 @@ chrome API Docs = good!
 	(update to Chrome Web Store, that is)
 
 !!0. Test auto-redirection feature
+	0.1 Possible bug: it appears onCompleted Script is running for every
+		request - in other words, images from hrefs on other sites. Fix?
 
 1. Make a graphical way for user to set proxy to avoid, other than relying on 
 	keyboard shortcuts. (See note above)

@@ -68,11 +68,15 @@ function checkIfBlocked(details)
 	*/
 
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-		alert("Proxy in use: " + (tabs[0].title.indexOf(proxyUrl) == -1));
+		/*
+		alert("URL: " + tabs[0].url);
+		alert("proxyUrl: " + proxyUrl);
+		alert("Proxy not in use: " + (tabs[0].url.indexOf(proxyUrl) == -1));
 		alert("Title Blocked: " + (tabs[0].title === localStorage["blocker_title"]));
+		*/
 		// if tab title matches title of block screen and proxy not in use
-		if((tabs[0].title === localStorage["blocker_title"]) && (tabs[0].title.indexOf(proxyUrl) == -1)) {
-			alert("redirecting");
+		if((tabs[0].title === localStorage["blocker_title"]) && (tabs[0].url.indexOf(proxyUrl) == -1)) {
+		//	alert("redirecting");
 			redirect(tabs[0]);
 		}
 
