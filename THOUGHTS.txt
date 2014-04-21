@@ -9,12 +9,6 @@ a tabbed indentation means it's just a wraparound so I don't go over 80 chars pe
 **********************
 
 
-/~General~\
-
-+ Next idea I will have it try to automatically detect if a site has been blocked,
-	so it can automatically redirect.
-
-
 /~Implementation~\
 
 ~ How it determines if a site is blocked:
@@ -61,6 +55,10 @@ chrome API Docs = good!
 
 + After the redirected page has been loaded, return the URL to normal without
 	refreshing, to hide evidence of a proxy server.
++ EDIT: Alternatively, could just keep track of which tabs are being redirected,
+	and if so, when they load page, just use chrome.webrequest to route it through
+	a new page without actually changing the url. (No idea if that's possible, 
+	read up on chrome.webrequest api.)
 
 + Use an https connection to server
 
@@ -73,13 +71,21 @@ chrome API Docs = good!
 
 !!0. Test auto-redirection feature
 	0.1 Possible bug: it appears onCompleted Script is running for every
-		request - in other words, images from hrefs on other sites. Fix?
+		request - in other words, images from hrefs on other sites. Fix for 
+		performance's sake?
+
+0.5 Make way to enable and disable auto-redirection, either in options or by
+	keyboard shortcut.
+
+0.7 Get alternative icons to show when redirecting and when not?
 
 1. Make a graphical way for user to set proxy to avoid, other than relying on 
 	keyboard shortcuts. (See note above)
 
 2. Instead of alert popups, make nicer looking notifications for when blocker
 	title has been set.
+
+
 
 ~ Whenever ~
 
