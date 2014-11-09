@@ -6,7 +6,7 @@ Chrome Web Store: https://chrome.google.com/webstore/detail/redirectron/klkaaecj
 
 This Project is a work in progress, but here's what it does:
 
-When a user clicks the icon, it prepends a proxy server to the url. Simple, but it works.
+When a user clicks the icon, it prepends a proxy server to the url.
 
 Feel free to contribute - some random thoughts I have for future features are in thoughts.txt.
 
